@@ -1,0 +1,18 @@
+.button{
+  height: 15vh;
+  aspect-ratio : 1 / 1;
+  background-image: url("/NSRALogo.png");  
+  background-size: cover;  
+  margin: 10px;
+  display: inline-flex;
+  border-radius: 50%;
+}
+
+.link{
+  margin: auto;
+  background: red;
+  color: white;
+  padding: 5px;
+  font-size: larger;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
