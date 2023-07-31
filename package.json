@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-pages": "yarn build && touch ./out/.nojekyll"
   },
   "dependencies": {
     "next": "13.4.12",

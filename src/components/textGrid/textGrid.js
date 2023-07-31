@@ -46,7 +46,11 @@ export default function TextGrid({text, width, height}) {
   }
 
   useEffect(() => {
-    setGridText(prepareText(text, width*height));
+    const interval = setInterval(() => {
+      setGridText(prepareText(text, width*height));
+    }, 500);
+    
+    return () => clearInterval(interval);
   },[]);
   
   const regEx = new RegExp(".{1,"+height + "}", "g");
