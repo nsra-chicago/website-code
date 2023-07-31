@@ -1,5 +1,7 @@
 .button{
-  height: 15vh;
+  height: 12vw;
+  min-height: 80px;
+  max-height: 125px;
   aspect-ratio : 1 / 1;
   background-image: url("/NSRALogo.png");  
   background-size: cover;  
@@ -15,4 +17,5 @@
   padding: 5px;
   font-size: larger;
   font-family: "Lucida Console", "Courier New", monospace;
+  font-size: .75em;
 }
