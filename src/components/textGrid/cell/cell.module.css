@@ -5,8 +5,8 @@
   display: flex;
   align-content: center;
   aspect-ratio: 1/1;
-  color: red;
-  border-color: white;
+  color: white;
+  border-color: red;
 }
 
 .topLeft {

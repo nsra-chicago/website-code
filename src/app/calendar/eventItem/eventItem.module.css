@@ -1,0 +1,51 @@
+.container {
+  border-width: 1px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  align-content: center;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.summary {
+  align-self: flex-start;
+  max-width: 8em;
+  padding: .5em;
+  border: white solid 1px;
+}
+
+.summary h1 {
+  font-size: 1.5em;
+}
+
+.descriptionContainer {
+  display: flex;
+  width: 20em;
+  padding: .5em;
+  order: 3;
+  flex-grow: 1;
+
+}
+
+.descriptionBody {
+}
+
+.location {
+  order:2;
+  width: 15em;
+  flex-grow: 1;
+  align-self: stretch; 
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: white 1px dashed;
+  margin-top: 1em;
+  padding-top: 1em;
+}

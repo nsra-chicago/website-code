@@ -10,6 +10,9 @@
     "build-pages": "yarn build && touch ./out/.nojekyll"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.19.2",
+    "ical.js": "^1.5.0",
+    "mapbox-gl": "^2.15.0",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0"
