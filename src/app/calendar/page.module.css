@@ -2,6 +2,7 @@
   align-items: center;
   margin: auto;
   margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
   width: 90%;
   font-family: "Lucida Console", "Courier New", monospace;
   color: white;
@@ -43,7 +44,7 @@
   border-style: solid;
   border-color:red;
   max-width: 50em;
-  min-width: 15em;
   gap: 1em;
+  width: inherit;
 }
 

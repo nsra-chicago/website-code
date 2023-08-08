@@ -50,7 +50,7 @@ export default function EventItem({mapID, summary, description, date, location, 
           </div>
         </div>
         <div className={styles.location}>
-          { locationReady && <MiniMap mapID={mapData.mapID} lata={mapData.lat} long={mapData.lng}/>} 
+          { locationReady && <MiniMap address={location} mapID={mapData.mapID} lata={mapData.lat} long={mapData.lng}/>} 
         </div>
       </div>
       <div className={styles.bottom}>

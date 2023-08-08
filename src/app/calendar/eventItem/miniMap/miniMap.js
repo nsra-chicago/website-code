@@ -7,7 +7,7 @@ import styles from './miniMap.module.css'
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_M;
 
 
-export default function MiniMap({mapID, lata, long}){
+export default function MiniMap({mapID, address, lata, long}){
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapID.toString(),
@@ -20,7 +20,7 @@ export default function MiniMap({mapID, lata, long}){
   },[]);
 
   return (
-    <a href={"https://www.google.com/maps/place/?q=place_id:" + mapID}>
+    <a href={"https://www.google.com/maps/search/?api=1&query="+ address + "&query_place_id=" + mapID}>
       <div id={mapID.toString()} className={styles.mapContainer} />
     </a>
   );
