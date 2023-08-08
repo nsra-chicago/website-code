@@ -22,8 +22,21 @@ export default function Calendar() {
     const geocoder = new window.google.maps.Geocoder();
     
     return events.map((vevent, idx) =>{
-      const event = new ICAL.Event(vevent); 
-      const eventDate = new Date(event.startDate.toJSDate());
+      const event = new ICAL.Event(vevent);
+
+      let eventDate = new Date(event.startDate.toJSDate());
+      if(event.isRecurring()){
+        const today = new Date();
+        const nextTime = event.iterator({
+          year: today.getFullYear(),
+          month: today.getMonth() + 1,
+          day: today.getDate(),
+          hour: event.startDate._time.hour, 
+          isDate: false
+        }, event.startDate.zone).next();
+        
+        eventDate = nextTime.toJSDate();
+      }
 
       return (
         <EventItem 
@@ -41,7 +54,19 @@ export default function Calendar() {
 
   return (
     <main className={styles.main}>
-      {isLoaded && createItems(vevents)}
+      <div className={styles.top}>
+        <div className={styles.message}>
+          <h1>coming up</h1>
+        </div>
+        <button className={styles.calButton}>
+          <a href="https://calendar.google.com/calendar/embed?src=b77a7c74ce194f6cc2245231fd6918c285a9123e68f736f2c359d4a3bbf55a06%40group.calendar.google.com&ctz=America%2FChicago">
+            more events
+          </a>
+        </button>
+      </div>
+      <div className={styles.bottom}>
+        {isLoaded && createItems(vevents)}
+      </div>
     </main>
   )
 }
