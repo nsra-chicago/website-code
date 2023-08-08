@@ -1,16 +1,49 @@
-.main {
+.main{
+  align-items: center;
+  margin: auto;
+  margin-top: 1.5vh;
+  width: 90%;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.message{
+  align-items: center;
+  
+}
+
+.calButton{
+  margin: auto;
+  background: red;
+  color: white;
+  padding: 5px;
+  font-size: larger;
+  border: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5em;
+  font-size: 1em;
+  gap: 1em;
+}
+
+
+.bottom{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 1em;
+  padding: 0.5em;
   border-width: 1px;
   border-style: solid;
   border-color:red;
-  width: 75%;
-  margin: auto;
-  margin-top: 1.5vh;
   max-width: 50em;
   min-width: 15em;
   gap: 1em;
 }
+
