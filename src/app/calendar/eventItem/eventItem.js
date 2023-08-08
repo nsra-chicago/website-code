@@ -3,7 +3,7 @@
 import MiniMap from './miniMap/miniMap'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import styles from './eventItem.module.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 // takes in event info and creates the event item div
 export default function EventItem({mapID, summary, description, date, location, geoCoder}) {
@@ -14,9 +14,12 @@ export default function EventItem({mapID, summary, description, date, location, 
   
   //something about this code makes the geocode function
   //get called multiple times
-  //shouldnt matter once this work is done via a script 
-  geoCoder.geocode({address: location})
+  //shouldnt matter once this work is done via a script
+  
+  useEffect(() => {
+    geoCoder.geocode({address: location})
     .then((result) => {
+      console.log('debug getting geocode! remove at some point');
       const { results } = result;
       setMapData({
         lat: results[0].geometry.location.lat(),
@@ -32,8 +35,9 @@ export default function EventItem({mapID, summary, description, date, location, 
         lng: -87.623177,
         mapID: 'ChIJ7cv00DwsDogRAMDACa2m4K8' 
       });
-     setLocationReady(true);
+      setLocationReady(true);
     });
+  }, []);
   
   return(
     <div className={styles.container}>
